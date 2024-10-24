@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Retro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="starfield"></div>
+    <header>
+        <h1 class="game-title">Galaxy Retro</h1>
+    </header>
+    <main>
+        <div id="gameWrapper">
+            <div id="scoreBoard">
+                Score: <span id="score">0</span> | High Score: <span id="highScore">0</span>
+            </div>
+            <div id="gameContainer">
+                <canvas id="gameCanvas"></canvas>
+                <div id="message"></div>
+            </div>
+            <div id="mobileControls">
+                <button id="upBtn" class="controlBtn">↑</button>
+                <div id="leftRightContainer">
+                    <input type="range" id="horizontalSlider" min="-100" max="100" value="0">
+                </div>
+                <button id="downBtn" class="controlBtn">↓</button>
+                <button id="shootBtn" class="controlBtn">SHOOT</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        © 2024 Galaxy Retro. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
