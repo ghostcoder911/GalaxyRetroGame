@@ -1,0 +1,75 @@
+body, html {
+    /* ... (previous styles remain unchanged) ... */
+}
+
+/* ... (other styles remain unchanged) ... */
+
+#mobileControls {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(0, 0, 51, 0.8);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.controlBtn {
+    background-color: rgba(0, 170, 255, 0.6);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: manipulation;
+    transition: background-color 0.3s;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+    height: 60px;
+}
+
+#shootBtn {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+#upBtn, #downBtn, #shootBtn {
+    width: 100%;
+}
+
+#horizontalSlider {
+    width: 100%;
+    margin: 10px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    background: rgba(0, 170, 255, 0.3);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 12px;
+}
+
+#horizontalSlider:hover {
+    opacity: 1;
+}
+
+#horizontalSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 170, 255, 0.8);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#horizontalSlider::-moz-range-thumb {
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 170, 255, 0.8);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* ... (rest of the styles remain unchanged) ... */
