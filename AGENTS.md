@@ -22,6 +22,8 @@ Then open `http://localhost:8080` in a browser. The game starts when you press *
 - `games/galaxy-retro/` — Galaxy Retro (space shooter, canonical reference for game page layout)
 - `games/asteroid-dodge/` — Asteroid Dodge (dodging game with power-ups)
 - `games/brick-breaker/` — Brick Breaker (Breakout/Arkanoid clone with neon bricks, mouse/touch/keyboard controls)
+- `games/snake-classic/` — Snake Classic
+- `games/retro-pong/` — Retro Pong (player vs AI, W/S or arrow keys or mouse, first to 11 wins)
 
 ### Notes
 
