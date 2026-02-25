@@ -2,7 +2,7 @@
 
 ## Cursor Cloud specific instructions
 
-This is a **static HTML/CSS/JS project** (Galaxy Retro — a retro space shooter game). There are no dependencies, no build tools, no package managers, and no automated tests.
+This is a **static HTML/CSS/JS project** — a retro arcade game hub with multiple games (Galaxy Retro, Asteroid Dodge, etc. under `games/`). There are no dependencies, no build tools, no package managers, and no automated tests.
 
 ### Running the application
 
@@ -16,10 +16,11 @@ Then open `http://localhost:8080` in a browser. The game starts when you press *
 
 ### Project structure
 
-- `index.html` — main page with canvas and mobile controls
-- `script.js` — all game logic (rendering, input, collision, scoring)
-- `styles.css` — styling (partial; contains placeholder comments for base styles)
-- `spaceship.svg` — player spaceship graphic
+- `index.html` — hub landing page
+- `script.js`, `styles.css`, `spaceship.svg` — root-level Galaxy Retro game assets
+- `games/<name>/` — individual game directories (each self-contained with `index.html`, `script.js`, `styles.css`)
+- `games/galaxy-retro/` — Galaxy Retro (space shooter, canonical reference for game page layout)
+- `games/asteroid-dodge/` — Asteroid Dodge (dodging game with power-ups)
 
 ### Notes
 
