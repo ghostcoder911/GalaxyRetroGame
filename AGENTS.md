@@ -2,7 +2,7 @@
 
 ## Cursor Cloud specific instructions
 
-This is a **static HTML/CSS/JS project** — a retro arcade game hub with multiple games (Galaxy Retro, Asteroid Dodge, etc. under `games/`). There are no dependencies, no build tools, no package managers, and no automated tests.
+This is a **static HTML/CSS/JS project** — a retro arcade hub with five browser-based games. There are no dependencies, no build tools, no package managers, and no automated tests.
 
 ### Running the application
 
@@ -12,21 +12,24 @@ Serve the files with any static HTTP server from the repository root:
 python3 -m http.server 8080
 ```
 
-Then open `http://localhost:8080` in a browser. The game starts when you press **Space** (desktop) or tap the arrow buttons (mobile).
+Then open `http://localhost:8080` in a browser. The hub page lists all games; clicking a game card opens it.
 
 ### Project structure
 
-- `index.html` — hub landing page
-- `script.js`, `styles.css`, `spaceship.svg` — root-level Galaxy Retro game assets
-- `games/<name>/` — individual game directories (each self-contained with `index.html`, `script.js`, `styles.css`)
-- `games/galaxy-retro/` — Galaxy Retro (space shooter, canonical reference for game page layout)
-- `games/asteroid-dodge/` — Asteroid Dodge (dodging game with power-ups)
-- `games/brick-breaker/` — Brick Breaker (Breakout/Arkanoid clone with neon bricks, mouse/touch/keyboard controls)
-- `games/snake-classic/` — Snake Classic
-- `games/retro-pong/` — Retro Pong (player vs AI, W/S or arrow keys or mouse, first to 11 wins)
+- `index.html` — arcade hub / landing page with game cards and ad placements
+- `hub.css` — shared styles for hub page and game page common elements (back link, ad containers)
+- `hub.js` — animated starfield background for the hub page
+- `games/galaxy-retro/` — space shooter game
+- `games/snake-classic/` — classic snake game
+- `games/brick-breaker/` — breakout/arkanoid game
+- `games/asteroid-dodge/` — asteroid dodging game
+- `games/retro-pong/` — pong vs AI game
+
+Each game directory contains its own `index.html`, `script.js`, and `styles.css`. Game pages link to `../../hub.css` for shared styles.
 
 ### Notes
 
-- No linting, testing, or build commands exist — the project has no `package.json` or any dependency files.
-- The `styles.css` file contains placeholder comments (`/* ... (previous styles remain unchanged) ... */`) where base body/html styles would normally be; this is intentional to the current state of the repo.
-- The SVG spaceship image is loaded via a relative path, so a real HTTP server is needed (not `file://` protocol) to avoid CORS issues.
+- No linting, testing, or build commands exist — all files are plain HTML/CSS/JS served as-is.
+- Google AdSense placeholders use `ca-pub-XXXXXXXXXXXXXXXX` — replace with a real publisher ID to enable ads.
+- The site is designed for GitHub Pages hosting from the repository root.
+- The original root-level `script.js`, `styles.css`, and `spaceship.svg` files are kept for backwards compatibility; the canonical game is in `games/galaxy-retro/`.

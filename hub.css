@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: #0a0a1a;
+    color: #e0e0ff;
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Starfield background */
+#starfield-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 15% 75%, rgba(0,170,255,0.5), transparent),
+        radial-gradient(2px 2px at 85% 15%, rgba(0,255,255,0.4), transparent);
+    background-color: #0a0a1a;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.arcade-title {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: clamp(28px, 6vw, 56px);
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #0088ff,
+        0 0 80px #0044ff;
+    margin-bottom: 12px;
+}
+
+.arcade-title .highlight {
+    color: #00ffff;
+}
+
+.tagline {
+    font-size: clamp(12px, 2vw, 16px);
+    color: #7788aa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Ad containers */
+.ad-container {
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 0 20px;
+    text-align: center;
+    min-height: 90px;
+}
+
+.ad-container.ad-inline {
+    grid-column: 1 / -1;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Games Grid */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 10px 0;
+}
+
+/* Game Card */
+.game-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(10, 15, 40, 0.95), rgba(5, 10, 30, 0.98));
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    border-color: #00ffff;
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.2),
+        0 0 30px rgba(0, 170, 255, 0.1),
+        inset 0 0 15px rgba(0, 170, 255, 0.05);
+    transform: translateY(-4px);
+}
+
+.game-thumbnail {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.galaxy-thumb {
+    background: linear-gradient(180deg, #0a0020 0%, #1a0040 50%, #0a0020 100%);
+}
+
+.snake-thumb {
+    background: linear-gradient(180deg, #001a00 0%, #003300 50%, #001a00 100%);
+}
+
+.brick-thumb {
+    background: linear-gradient(180deg, #1a0a00 0%, #331a00 50%, #1a0a00 100%);
+}
+
+.asteroid-thumb {
+    background: linear-gradient(180deg, #0a0a1a 0%, #15152a 50%, #0a0a1a 100%);
+}
+
+.pong-thumb {
+    background: linear-gradient(180deg, #000a1a 0%, #001433 50%, #000a1a 100%);
+}
+
+.thumb-icon {
+    font-size: 64px;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .thumb-icon {
+    transform: scale(1.15);
+}
+
+.game-info {
+    padding: 16px 20px;
+}
+
+.game-info h2 {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 14px;
+    color: #00ffff;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.game-info p {
+    font-size: 13px;
+    color: #8899bb;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.game-tag {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border: 1px solid rgba(0, 170, 255, 0.4);
+    border-radius: 20px;
+    color: #00aaff;
+}
+
+/* Play overlay */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-btn {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 20px;
+    color: #00ffff;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #0088ff;
+    letter-spacing: 3px;
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff; }
+    50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #0088ff, 0 0 60px #0044ff; }
+}
+
+/* About Section */
+.about-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 18px;
+    color: #00ffff;
+    margin-bottom: 16px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.about-section > p {
+    font-size: 14px;
+    color: #8899bb;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.feature {
+    padding: 24px 16px;
+    background: rgba(0, 20, 60, 0.3);
+    border: 1px solid rgba(0, 170, 255, 0.15);
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.feature:hover {
+    border-color: rgba(0, 170, 255, 0.4);
+}
+
+.feature-icon {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    font-size: 13px;
+    color: #00ddff;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 12px;
+    color: #7788aa;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(0, 170, 255, 0.1);
+    margin-top: 20px;
+}
+
+.footer-content p {
+    color: #445566;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #446688;
+    text-decoration: none;
+    font-size: 11px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 25px 15px 15px;
+    }
+
+    .game-thumbnail {
+        height: 140px;
+    }
+}
+
+/* Back link used in game pages */
+.back-link {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+}

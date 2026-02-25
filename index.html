@@ -3,36 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaxy Retro</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Retro Arcade - Free Online Retro Games</title>
+    <meta name="description" content="Play free retro arcade games online! Galaxy Retro, Snake Classic, Brick Breaker, Asteroid Dodge, Retro Pong and more. No downloads, just pure retro fun.">
+    <meta name="keywords" content="retro games, arcade games, free online games, space shooter, snake game, brick breaker, pong, asteroid dodge, HTML5 games">
+    <meta property="og:title" content="Retro Arcade - Free Online Retro Games">
+    <meta property="og:description" content="Play free retro arcade games online. No downloads, just pure retro fun.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="hub.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="starfield"></div>
+    <div id="starfield-bg"></div>
+
     <header>
-        <h1 class="game-title">Galaxy Retro</h1>
+        <div class="header-content">
+            <h1 class="arcade-title">RETRO<span class="highlight">ARCADE</span></h1>
+            <p class="tagline">Free Classic Games &bull; No Downloads &bull; Play Instantly</p>
+        </div>
     </header>
+
+    <div class="ad-container ad-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
     <main>
-        <div id="gameWrapper">
-            <div id="scoreBoard">
-                Score: <span id="score">0</span> | High Score: <span id="highScore">0</span>
-            </div>
-            <div id="gameContainer">
-                <canvas id="gameCanvas"></canvas>
-                <div id="message"></div>
-            </div>
-            <div id="mobileControls">
-                <button id="upBtn" class="controlBtn">↑</button>
-                <div id="leftRightContainer">
-                    <input type="range" id="horizontalSlider" min="-100" max="100" value="0">
+        <section class="games-grid">
+            <a href="games/galaxy-retro/index.html" class="game-card" data-category="shooter">
+                <div class="game-thumbnail galaxy-thumb">
+                    <div class="thumb-icon">&#128640;</div>
                 </div>
-                <button id="downBtn" class="controlBtn">↓</button>
-                <button id="shootBtn" class="controlBtn">SHOOT</button>
+                <div class="game-info">
+                    <h2>Galaxy Retro</h2>
+                    <p>Blast alien invaders in this classic space shooter!</p>
+                    <span class="game-tag">Shooter</span>
+                </div>
+                <div class="play-overlay">
+                    <span class="play-btn">&#9654; PLAY</span>
+                </div>
+            </a>
+
+            <a href="games/snake-classic/index.html" class="game-card" data-category="classic">
+                <div class="game-thumbnail snake-thumb">
+                    <div class="thumb-icon">&#128013;</div>
+                </div>
+                <div class="game-info">
+                    <h2>Snake Classic</h2>
+                    <p>Guide the snake, eat food, grow longer. Don't hit the walls!</p>
+                    <span class="game-tag">Classic</span>
+                </div>
+                <div class="play-overlay">
+                    <span class="play-btn">&#9654; PLAY</span>
+                </div>
+            </a>
+
+            <div class="ad-container ad-inline">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="fluid"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <a href="games/brick-breaker/index.html" class="game-card" data-category="classic">
+                <div class="game-thumbnail brick-thumb">
+                    <div class="thumb-icon">&#129521;</div>
+                </div>
+                <div class="game-info">
+                    <h2>Brick Breaker</h2>
+                    <p>Smash neon bricks with your paddle and ball!</p>
+                    <span class="game-tag">Arcade</span>
+                </div>
+                <div class="play-overlay">
+                    <span class="play-btn">&#9654; PLAY</span>
+                </div>
+            </a>
+
+            <a href="games/asteroid-dodge/index.html" class="game-card" data-category="action">
+                <div class="game-thumbnail asteroid-thumb">
+                    <div class="thumb-icon">&#9732;</div>
+                </div>
+                <div class="game-info">
+                    <h2>Asteroid Dodge</h2>
+                    <p>Dodge falling asteroids and collect power-ups to survive!</p>
+                    <span class="game-tag">Action</span>
+                </div>
+                <div class="play-overlay">
+                    <span class="play-btn">&#9654; PLAY</span>
+                </div>
+            </a>
+
+            <a href="games/retro-pong/index.html" class="game-card" data-category="classic">
+                <div class="game-thumbnail pong-thumb">
+                    <div class="thumb-icon">&#127955;</div>
+                </div>
+                <div class="game-info">
+                    <h2>Retro Pong</h2>
+                    <p>Challenge the AI in this neon-powered classic!</p>
+                    <span class="game-tag">Classic</span>
+                </div>
+                <div class="play-overlay">
+                    <span class="play-btn">&#9654; PLAY</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <div class="ad-container ad-bottom">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section class="about-section">
+        <h2>About Retro Arcade</h2>
+        <p>Welcome to Retro Arcade &mdash; your destination for free, browser-based retro games. No downloads, no sign-ups, just pure classic gaming fun. All games work on desktop and mobile devices.</p>
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">&#127918;</span>
+                <h3>Free to Play</h3>
+                <p>All games are completely free. Jump in and start playing instantly.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">&#128241;</span>
+                <h3>Mobile Friendly</h3>
+                <p>Play on any device &mdash; desktop, tablet, or phone.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">&#9889;</span>
+                <h3>No Downloads</h3>
+                <p>Games run right in your browser. Nothing to install.</p>
             </div>
         </div>
-    </main>
+    </section>
+
     <footer>
-        © 2024 Galaxy Retro. All rights reserved.
+        <div class="footer-content">
+            <p>&copy; 2024 Retro Arcade. All rights reserved.</p>
+            <p class="footer-links">
+                <a href="#privacy">Privacy Policy</a> &bull;
+                <a href="#terms">Terms of Service</a> &bull;
+                <a href="#contact">Contact</a>
+            </p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="hub.js"></script>
 </body>
 </html>
