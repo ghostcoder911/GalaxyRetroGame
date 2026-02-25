@@ -24,6 +24,11 @@ Then open `http://localhost:8080` in a browser. The hub page lists all games; cl
 - `games/brick-breaker/` — breakout/arkanoid game
 - `games/asteroid-dodge/` — asteroid dodging game
 - `games/retro-pong/` — pong vs AI game
+- `games/snake-classic/` — classic snake game (also listed above)
+- `games/space-invaders/` — space invaders game
+- `games/tetris-classic/` — tetris game
+- `games/flappy-bird/` — flappy bird clone
+- `games/memory-match/` — memory card matching game
 
 Each game directory contains its own `index.html`, `script.js`, and `styles.css`. Game pages link to `../../hub.css` for shared styles.
 
