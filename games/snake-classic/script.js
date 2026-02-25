@@ -33,7 +33,7 @@ function resizeCanvas() {
         (adBottom ? adBottom.offsetHeight : 0) +
         20;
 
-    const maxW = window.innerWidth - 4;
+    const maxW = Math.min(window.innerWidth - 40, 900);
     const maxH = window.innerHeight - usedHeight;
 
     cols = Math.floor(maxW / CELL_SIZE);
