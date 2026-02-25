@@ -145,6 +145,22 @@ main {
     background: linear-gradient(180deg, #000a1a 0%, #001433 50%, #000a1a 100%);
 }
 
+.flappy-thumb {
+    background: linear-gradient(180deg, #001a0a 0%, #003315 50%, #001a0a 100%);
+}
+
+.tetris-thumb {
+    background: linear-gradient(180deg, #1a001a 0%, #330033 50%, #1a001a 100%);
+}
+
+.invaders-thumb {
+    background: linear-gradient(180deg, #0a001a 0%, #1a0033 50%, #0a001a 100%);
+}
+
+.memory-thumb {
+    background: linear-gradient(180deg, #1a1a00 0%, #33330a 50%, #1a1a00 100%);
+}
+
 .thumb-icon {
     font-size: 64px;
     filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.5));
