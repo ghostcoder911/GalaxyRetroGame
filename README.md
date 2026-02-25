@@ -37,19 +37,6 @@ python3 -m http.server 8080
 # Open http://localhost:8080
 ```
 
-## Ad Revenue Setup
-
-The site includes Google AdSense placeholders. To enable ads:
-
-1. Sign up at [Google AdSense](https://www.google.com/adsense)
-2. Replace `ca-pub-XXXXXXXXXXXXXXXX` with your publisher ID in all HTML files
-3. Replace `XXXXXXXXXX` ad slot values with your ad unit IDs
-4. AdSense will review your site and start serving ads once approved
-
-Ad placements:
-- **Hub page:** Top banner, inline between game cards, bottom banner
-- **Game pages:** Top and bottom banners
-
 ## Hosting
 
 The site is configured for GitHub Pages deployment from the `main` branch root.
