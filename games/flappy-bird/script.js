@@ -15,12 +15,12 @@
         if (state === 'idle') drawIdle();
     });
 
-    const GRAVITY = 0.45;
-    const FLAP_STRENGTH = -7.5;
+    const GRAVITY = 0.35;
+    const FLAP_STRENGTH = -6.5;
     const PIPE_WIDTH = 52;
-    const PIPE_GAP = 155;
-    const PIPE_SPEED = 2.8;
-    const PIPE_SPAWN_INTERVAL = 95;
+    const PIPE_GAP = 170;
+    const PIPE_SPEED = 2.5;
+    const PIPE_SPAWN_INTERVAL = 110;
     const BIRD_RADIUS = 14;
     const STAR_COUNT = 60;
 
@@ -46,7 +46,7 @@
     function resetGame() {
         bird = {
             x: canvas.width * 0.25,
-            y: canvas.height / 2,
+            y: canvas.height * 0.35,
             vy: 0,
             rotation: 0
         };
@@ -195,7 +195,17 @@
     }
 
     function checkCollision() {
-        if (bird.y - BIRD_RADIUS < 0 || bird.y + BIRD_RADIUS > canvas.height) {
+        if (bird.y - BIRD_RADIUS < 0) {
+            bird.y = BIRD_RADIUS;
+            bird.vy = 0;
+            return false;
+        }
+        if (bird.y + BIRD_RADIUS > canvas.height) {
+            if (frameCount < 120) {
+                bird.y = canvas.height - BIRD_RADIUS;
+                bird.vy = -3;
+                return false;
+            }
             return true;
         }
         for (let i = 0; i < pipes.length; i++) {
@@ -220,7 +230,7 @@
         bird.vy += GRAVITY;
         bird.y += bird.vy;
 
-        if (frameCount % PIPE_SPAWN_INTERVAL === 0) {
+        if (frameCount > 120 && frameCount % PIPE_SPAWN_INTERVAL === 0) {
             spawnPipe();
         }
 
@@ -271,6 +281,7 @@
         state = 'playing';
         messageEl.innerHTML = '';
         resetGame();
+        flap();
         gameLoop();
     }
 
