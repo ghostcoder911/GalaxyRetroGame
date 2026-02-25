@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000022;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+header.game-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+.back-link {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.back-link:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.game-title {
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+    margin: 0;
+}
+
+#scoreBoard {
+    text-align: center;
+    font-size: 18px;
+    padding: 8px 5px;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+#gameContainer {
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #00aaff;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.3), inset 0 0 15px rgba(0, 170, 255, 0.1);
+}
+
+#gameCanvas {
+    display: block;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;
+    display: none;
+    text-align: center;
+    pointer-events: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #335;
+    font-size: 12px;
+}
+
+.ad-container {
+    text-align: center;
+    padding: 5px 0;
+    min-height: 10px;
+}
