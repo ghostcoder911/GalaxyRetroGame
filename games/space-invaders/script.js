@@ -39,9 +39,11 @@
     let highScore = parseInt(localStorage.getItem('spaceInvadersHighScore')) || 0;
     highScoreEl.textContent = highScore;
 
-    let player, aliens, alienDir, alienDropTimer, alienMoveTimer, alienMoveInterval;
-    let playerBullet, alienBullets, shields, ufo, particles;
-    let dyingTimer, waveClearTimer;
+    let player = { x: 0, y: 0, w: 0, h: 0, alive: false };
+    let aliens = [];
+    let alienDir = 1, alienDropTimer = 0, alienMoveTimer = 0, alienMoveInterval = 600;
+    let playerBullet = null, alienBullets = [], shields = [], ufo = null, particles = [];
+    let dyingTimer = 0, waveClearTimer = 0;
     let keys = {};
 
     function resetPlayer() {
