@@ -21,6 +21,7 @@ Then open `http://localhost:8080` in a browser. The game starts when you press *
 - `games/<name>/` — individual game directories (each self-contained with `index.html`, `script.js`, `styles.css`)
 - `games/galaxy-retro/` — Galaxy Retro (space shooter, canonical reference for game page layout)
 - `games/asteroid-dodge/` — Asteroid Dodge (dodging game with power-ups)
+- `games/brick-breaker/` — Brick Breaker (Breakout/Arkanoid clone with neon bricks, mouse/touch/keyboard controls)
 
 ### Notes
 
