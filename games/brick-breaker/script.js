@@ -420,9 +420,10 @@ canvas.addEventListener('touchmove', function (e) {
 }, { passive: false });
 
 canvas.addEventListener('touchstart', function (e) {
+    e.preventDefault();
     const rect = canvas.getBoundingClientRect();
     mouseX = e.touches[0].clientX - rect.left;
-}, { passive: true });
+}, { passive: false });
 
 document.addEventListener('keydown', function (e) {
     keys[e.key] = true;
