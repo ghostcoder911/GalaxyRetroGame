@@ -633,4 +633,64 @@
 
     showMessage('SPACE INVADERS<br><br>Press Space to Start<br><br><small>← → Move &nbsp; Space Shoot</small>');
     requestAnimationFrame(gameLoop);
+
+    // Mobile touch controls
+    var btnLeft = document.getElementById('btnLeft');
+    var btnRight = document.getElementById('btnRight');
+    var btnFire = document.getElementById('btnFire');
+
+    function startIfNeeded() {
+        if (state === STATE_START || state === STATE_GAME_OVER) {
+            hideMessage();
+            initGame();
+            state = STATE_PLAYING;
+            return true;
+        }
+        return false;
+    }
+
+    if (btnLeft) {
+        btnLeft.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            if (!startIfNeeded()) {
+                keys['ArrowLeft'] = true;
+            }
+        }, { passive: false });
+        btnLeft.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            keys['ArrowLeft'] = false;
+        }, { passive: false });
+    }
+    if (btnRight) {
+        btnRight.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            if (!startIfNeeded()) {
+                keys['ArrowRight'] = true;
+            }
+        }, { passive: false });
+        btnRight.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            keys['ArrowRight'] = false;
+        }, { passive: false });
+    }
+    if (btnFire) {
+        btnFire.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            if (!startIfNeeded()) {
+                if (state === STATE_PLAYING && !playerBullet && player.alive) {
+                    playerBullet = {
+                        x: player.x + player.w / 2 - BULLET_W / 2,
+                        y: player.y - BULLET_H,
+                        w: BULLET_W,
+                        h: BULLET_H
+                    };
+                }
+            }
+        }, { passive: false });
+    }
+
+    canvas.addEventListener('touchstart', function (e) {
+        e.preventDefault();
+        startIfNeeded();
+    }, { passive: false });
 })();

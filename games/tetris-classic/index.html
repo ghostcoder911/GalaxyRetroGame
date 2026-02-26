@@ -7,7 +7,7 @@
     <meta name="description" content="Play Tetris Classic, the iconic block-stacking puzzle game with neon retro style!">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../../hub.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2123085019352620" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../mobile-controls.css">
 </head>
 <body>
     <header class="game-header">
@@ -30,6 +30,19 @@
                 </div>
             </div>
         </div>
+            <div class="mobile-controls dpad-layout" id="mobileControls" style="max-width: 340px;">
+                <div class="dpad-row">
+                    <button class="ctrl-btn wide" id="btnRotate">&#8635; ROTATE</button>
+                </div>
+                <div class="dpad-row">
+                    <button class="ctrl-btn" id="btnLeft">&#9664;</button>
+                    <button class="ctrl-btn" id="btnDown">&#9660;</button>
+                    <button class="ctrl-btn" id="btnRight">&#9654;</button>
+                </div>
+                <div class="dpad-row">
+                    <button class="ctrl-btn wide fire-btn" id="btnDrop">DROP</button>
+                </div>
+            </div>
     </main>
     <footer>&copy; 2024 Retro Arcade. All rights reserved.</footer>
     <script src="script.js"></script>

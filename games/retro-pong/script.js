@@ -360,4 +360,53 @@
     updateScoreDisplay();
     showMessage('Press Space to Start');
     gameLoop();
+
+    // Mobile touch controls
+    var btnUp = document.getElementById('btnUp');
+    var btnDown = document.getElementById('btnDown');
+
+    if (btnUp) {
+        btnUp.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            keys['ArrowUp'] = true;
+            useMouseControl = false;
+            if (state === 'idle' || state === 'gameover') {
+                startGame();
+            }
+        }, {passive: false});
+        btnUp.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            keys['ArrowUp'] = false;
+        }, {passive: false});
+    }
+
+    if (btnDown) {
+        btnDown.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            keys['ArrowDown'] = true;
+            useMouseControl = false;
+            if (state === 'idle' || state === 'gameover') {
+                startGame();
+            }
+        }, {passive: false});
+        btnDown.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            keys['ArrowDown'] = false;
+        }, {passive: false});
+    }
+
+    canvas.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        if (state === 'idle' || state === 'gameover') {
+            startGame();
+        }
+    }, {passive: false});
+
+    canvas.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        var touch = e.touches[0];
+        var rect = canvas.getBoundingClientRect();
+        mouseY = touch.clientY - rect.top;
+        useMouseControl = true;
+    }, {passive: false});
 })();

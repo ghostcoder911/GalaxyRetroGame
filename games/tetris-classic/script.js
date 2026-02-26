@@ -502,4 +502,55 @@
     }
 
     showStartScreen();
+
+    // Mobile touch controls
+    var btnLeft = document.getElementById('btnLeft');
+    var btnRight = document.getElementById('btnRight');
+    var btnDown = document.getElementById('btnDown');
+    var btnRotate = document.getElementById('btnRotate');
+    var btnDrop = document.getElementById('btnDrop');
+
+    function handleMobileBtn(action) {
+        if (gameState === 'start' || gameState === 'over') {
+            startGame();
+            return;
+        }
+        if (gameState === 'playing') {
+            action();
+        }
+    }
+
+    if (btnLeft) {
+        btnLeft.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            handleMobileBtn(moveLeft);
+        }, { passive: false });
+    }
+    if (btnRight) {
+        btnRight.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            handleMobileBtn(moveRight);
+        }, { passive: false });
+    }
+    if (btnDown) {
+        btnDown.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            handleMobileBtn(function () {
+                softDrop();
+                resetDropTimer();
+            });
+        }, { passive: false });
+    }
+    if (btnRotate) {
+        btnRotate.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            handleMobileBtn(tryRotate);
+        }, { passive: false });
+    }
+    if (btnDrop) {
+        btnDrop.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            handleMobileBtn(hardDrop);
+        }, { passive: false });
+    }
 })();

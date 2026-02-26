@@ -1,0 +1,94 @@
+.mobile-controls {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.mobile-controls.dpad-layout {
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 280px;
+}
+
+.mobile-controls.bar-layout {
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.ctrl-btn {
+    background: rgba(0, 170, 255, 0.25);
+    border: 2px solid rgba(0, 170, 255, 0.5);
+    border-radius: 12px;
+    color: #00ffff;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    min-width: 60px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.1s;
+    flex-shrink: 0;
+}
+
+.ctrl-btn:active, .ctrl-btn.active {
+    background: rgba(0, 170, 255, 0.5);
+    border-color: #00ffff;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+
+.ctrl-btn.fire-btn {
+    background: rgba(255, 50, 50, 0.25);
+    border-color: rgba(255, 50, 50, 0.5);
+    color: #ff4444;
+    min-width: 80px;
+    font-size: 16px;
+}
+
+.ctrl-btn.fire-btn:active, .ctrl-btn.fire-btn.active {
+    background: rgba(255, 50, 50, 0.5);
+    border-color: #ff4444;
+}
+
+.ctrl-btn.wide {
+    flex: 1;
+    min-width: 70px;
+}
+
+.dpad-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+.dpad-spacer {
+    width: 60px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+@media (pointer: coarse), (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+}
+
+@media (pointer: fine) and (min-width: 769px) {
+    .mobile-controls {
+        display: none !important;
+    }
+}

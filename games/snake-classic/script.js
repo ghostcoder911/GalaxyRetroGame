@@ -383,3 +383,25 @@ window.addEventListener('resize', () => {
 });
 
 init();
+
+// Mobile d-pad controls
+(function() {
+    var btns = {
+        btnUp: {x:0,y:-1}, btnDown: {x:0,y:1},
+        btnLeft: {x:-1,y:0}, btnRight: {x:1,y:0}
+    };
+    Object.keys(btns).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            var d = btns[id];
+            if (direction.x !== -d.x || direction.y !== -d.y) {
+                nextDirection = {x: d.x, y: d.y};
+            }
+            if (gameState !== 'running') {
+                startGame();
+            }
+        }, {passive: false});
+    });
+})();
