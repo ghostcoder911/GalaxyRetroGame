@@ -498,3 +498,44 @@ window.addEventListener('resize', function() {
 });
 
 init();
+
+// Mobile touch controls
+(function() {
+    var btnLeft = document.getElementById('btnLeft');
+    var btnRight = document.getElementById('btnRight');
+
+    if (btnLeft) {
+        btnLeft.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            keysDown['ArrowLeft'] = true;
+            if (gameState === STATE_IDLE || gameState === STATE_GAMEOVER) {
+                startGame();
+            }
+        }, {passive: false});
+        btnLeft.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            keysDown['ArrowLeft'] = false;
+        }, {passive: false});
+    }
+
+    if (btnRight) {
+        btnRight.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            keysDown['ArrowRight'] = true;
+            if (gameState === STATE_IDLE || gameState === STATE_GAMEOVER) {
+                startGame();
+            }
+        }, {passive: false});
+        btnRight.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            keysDown['ArrowRight'] = false;
+        }, {passive: false});
+    }
+
+    canvas.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        if (gameState === STATE_IDLE || gameState === STATE_GAMEOVER) {
+            startGame();
+        }
+    }, {passive: false});
+})();
